@@ -64,13 +64,13 @@ function linesInFile($fileName = '')
             $line = fgets($file, 1024);
             // PHP_EOL only matches linebreaks native to this system.
             // Instead match Windows, Mac OS 9, and  Unix breaks.
-            $lines += preg_match_all('/\r?\n|\n/',$line);
+            $lines += preg_match_all('/\r?\n|\n/', $line);
             $oldLine = $line;
-            if($oldLine && ("\r" == substr($oldLine,-1)) && ("\n" == substr($line,0,1))){
+            if ($oldLine && ("\r" == substr($oldLine, -1)) && ("\n" == substr($line, 0, 1))) {
                 //in splitting up the file we split a Windows linebreak in half
                 //and we counted it twice, so we should decrement the count by one.
                 --$lines;
-                if(VERBOSE){
+                if (VERBOSE) {
                     echo "\t\tFound a 🦄 before {$lines} in  {$filename}";
                 }
             }
