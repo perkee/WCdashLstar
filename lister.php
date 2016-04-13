@@ -10,18 +10,11 @@
 function listFileLengths($path, $seen = [])
 {
   $total = 0;
-  /*
+
   $seenLinks = [];
   while(is_link($fileOrDir) && !in_array($fileOrDir,$seenLinks)){
     $fileOrDir = readlink($fileOrDir);
   }
- //echo $path . PHP_EOL;
-  if(!$prefix){//get the 
-    $matches = [];
-    preg_match('/.*\//',$path,$matches);
-    $prefix = $matches[0];
-  }
-  */
   
   if(!in_array($path,$seen)){
     $seen[] = $path;
