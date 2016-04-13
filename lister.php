@@ -71,7 +71,7 @@ function linesInFile($fileName = '')
                 //and we counted it twice, so we should decrement the count by one.
                 --$lines;
                 if(VERBOSE){
-                    echo "\t\tFound a unicorn before {$lines} in  {$filename}";
+                    echo "\t\tFound a 🦄 before {$lines} in  {$filename}";
                 }
             }
         }
