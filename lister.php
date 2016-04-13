@@ -87,4 +87,10 @@ function isTextFile($fileName = '')
   return 0 === strncmp($mime, 'text', 4);
 }
 
-echo listFileLengths('../ticketblaster/public/')['total'] . PHP_EOL;
+$paths = [
+  '../perk/public/',
+  '.'
+];
+foreach($paths as $path){
+  echo listFileLengths($path)['total'] . "\t$path" . PHP_EOL;
+}
