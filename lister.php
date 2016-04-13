@@ -1,4 +1,6 @@
 <?php
+
+define('VERBOSE', false);
 /**
  * Given a file or directory, return the length in lines of all files therein
  * @param string $fileOrDir The file or directory on filesystems
@@ -36,7 +38,11 @@ function listFileLengths($path, $seen = [])
       
     }
     elseif(is_file($path)){
-      $total += linesInFile($path);
+      $linesInFile = linesInFile($path);
+      if(VERBOSE){
+        echo "\t{$linesInFile}\t{$path}" . PHP_EOL;
+      }
+      $total += $linesInFile;
     }
   }
   return [
